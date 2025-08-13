@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>潛森｜文青酒單風植物誌（六組）</title>
+  <meta name="description" content="品牌「潛森」的文青酒單風格網站，以六個組別呈現：Platycentrum、Diploclinium、Coelocentrum、Petermannia、Adiantum、Bucephalandra。">
+  <link rel="stylesheet" href="./assets/site.css">
+</head>
+<body>
+  <div class="topbar">
+    <div class="container nav">
+      <a class="brand" href="#top" aria-label="潛森首頁">
+        <div class="logo">潛</div>
+        <div class="brand-title">潛森</div>
+      </a>
+      <nav class="nav-links"></nav>
+    </div>
+  </div>
+
+  <header id="top" class="hero">
+    <div class="hero-inner container">
+      <div class="circle" role="img" aria-label="潛森品牌圓形徽章">
+        <div class="brand-zh">潛森</div>
+        <div class="est">EST. 2025</div>
+      </div>
+      <p class="tagline">靜觀萬物，細品一葉</p>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="container">
+        <h2>植物酒單</h2>
+        <div class="sub">以六個分類組別呈現，並支援搜尋與排序。</div>
+        <div class="hr"></div>
+        <div class="controls">
+          <label class="search" aria-label="搜尋植物">
+            🔎 <input id="q" placeholder="搜尋：名稱、學名、關鍵字…">
+          </label>
+          <select id="sort" class="select" aria-label="排序">
+            <option value="name">A→Z</option>
+            <option value="difficulty">難度（易→難）</option>
+            <option value="price">價格（低→高）</option>
+          </select>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6 組別區塊（用 id 以字串轉換生成） -->
+    <section id="sec-Begonia_sect__Platycentrum" class="section">
+      <div class="container">
+        <h2>Begonia sect. Platycentrum</h2>
+        <div class="sub">二室組海棠。</div>
+        <div class="grid" id="list-Begonia_sect__Platycentrum"></div>
+      </div>
+    </section>
+
+    <section id="sec-Begonia_sect__Diploclinium" class="section">
+      <div class="container">
+        <h2>Begonia sect. Diploclinium</h2>
+        <div class="sub">東亞秋海棠組。</div>
+        <div class="grid" id="list-Begonia_sect__Diploclinium"></div>
+      </div>
+    </section>
+
+    <section id="sec-Begonia_sect__Coelocentrum" class="section">
+      <div class="container">
+        <h2>Begonia sect. Coelocentrum</h2>
+        <div class="sub">側膜組秋海棠。</div>
+        <div class="grid" id="list-Begonia_sect__Coelocentrum"></div>
+      </div>
+    </section>
+
+    <section id="sec-Begonia_sect__Petermannia" class="section">
+      <div class="container">
+        <h2>Begonia sect. Petermannia</h2>
+        <div class="sub">Petermannia 組。</div>
+        <div class="grid" id="list-Begonia_sect__Petermannia"></div>
+      </div>
+    </section>
+
+    <section id="sec-Adiantum" class="section">
+      <div class="container">
+        <h2>Adiantum</h2>
+        <div class="sub">鐵線蕨屬。</div>
+        <div class="grid" id="list-Adiantum"></div>
+      </div>
+    </section>
+
+    <section id="sec-Bucephalandra" class="section">
+      <div class="container">
+        <h2>Bucephalandra</h2>
+        <div class="sub">辣椒榕屬。</div>
+        <div class="grid" id="list-Bucephalandra"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">© <span id="year"></span> 潛森 • 以文青酒單風格整理植物</div>
+  </footer>
+
+  <dialog id="modal" aria-label="植物詳情">
+    <div class="modal-head">
+      <strong id="m-title">植物詳情</strong>
+      <button class="modal-close" onclick="modal.close()">×</button>
+    </div>
+    <div class="modal-body">
+      <div style="display:grid;grid-template-columns:90px 1fr;gap:16px">
+        <div class="thumb" id="m-thumb">No Image</div>
+        <div>
+          <div class="title" id="m-common"></div>
+          <div class="latin" id="m-latin"></div>
+          <div class="meta" id="m-meta"></div>
+          <p id="m-desc" style="margin:8px 0 0"></p>
+        </div>
+      </div>
+    </div>
+  </dialog>
+
+  <script src="./assets/site.js"></script>
+  <script>
+    const modal = document.getElementById('modal');
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
