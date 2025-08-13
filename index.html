@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>潛森｜文青酒單風植物誌</title>
+  <meta name="description" content="品牌「潛森」的文青酒單風格網站：封面 + 植物酒單式介紹。">
+  <link rel="stylesheet" href="./assets/site.css">
+</head>
+<body>
+  <!-- 導覽列 -->
+  <div class="topbar">
+    <div class="container nav">
+      <a class="brand" href="#top" aria-label="潛森首頁">
+        <div class="logo">潛</div>
+        <div class="brand-title">潛森</div>
+      </a>
+      <nav class="nav-links">
+        <!-- 動態注入分類連結 -->
+      </nav>
+    </div>
+  </div>
+
+  <!-- 封面 -->
+  <header id="top" class="hero">
+    <div class="hero-inner container">
+      <div class="circle" role="img" aria-label="潛森品牌圓形徽章">
+        <div class="brand-zh">潛森</div>
+        <div class="est">EST. 2025</div>
+      </div>
+      <p class="tagline">靜觀萬物，細品一葉</p>
+      <div class="cta">
+        <a class="btn" href="#sec-觀葉">開始瀏覽</a>
+        <a class="btn alt" href="#about">關於品牌</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- 控制列 -->
+    <section class="section">
+      <div class="container">
+        <h2>植物酒單</h2>
+        <div class="sub">以餐酒館酒單的方式，整理各分類植物的精選清單。</div>
+        <div class="hr"></div>
+        <div class="controls">
+          <label class="search" aria-label="搜尋植物">
+            🔎 <input id="q" placeholder="搜尋：名稱、學名、關鍵字…">
+          </label>
+          <select id="sort" class="select" aria-label="排序">
+            <option value="name">A→Z</option>
+            <option value="difficulty">難度（易→難）</option>
+            <option value="price">價格（低→高）</option>
+          </select>
+        </div>
+      </div>
+    </section>
+
+    <!-- 各分類區塊（以 section 呈現） -->
+    <section id="sec-觀葉" class="section">
+      <div class="container">
+        <h2>觀葉</h2>
+        <div class="sub">耐陰、葉型多變，適合室內造景。</div>
+        <div class="grid" id="list-觀葉"></div>
+      </div>
+    </section>
+
+    <section id="sec-多肉" class="section">
+      <div class="container">
+        <h2>多肉</h2>
+        <div class="sub">日照充足、形態可愛，適合陽台、窗邊。</div>
+        <div class="grid" id="list-多肉"></div>
+      </div>
+    </section>
+
+    <section id="sec-蕨類" class="section">
+      <div class="container">
+        <h2>蕨類</h2>
+        <div class="sub">喜濕度、層次感強，綠意滿滿。</div>
+        <div class="grid" id="list-蕨類"></div>
+      </div>
+    </section>
+
+    <section id="sec-開花" class="section">
+      <div class="container">
+        <h2>開花</h2>
+        <div class="sub">在四季輪替中帶來驚喜。</div>
+        <div class="grid" id="list-開花"></div>
+      </div>
+    </section>
+
+    <!-- 關於品牌 -->
+    <section id="about" class="section">
+      <div class="container">
+        <h2>關於「潛森」</h2>
+        <div class="sub">潛入森林深處，慢慢品味每一片葉的紋理。</div>
+        <p>「潛森」是一份以酒單為靈感的植物誌。以簡潔的卡片、精煉的資訊，像挑酒一樣挑植物：看產地、性格、價格與照顧難易，為生活挑一株剛剛好。</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">© <span id="year"></span> 潛森 • 以文青酒單風格整理植物</div>
+  </footer>
+
+  <!-- 詳情彈窗 -->
+  <dialog id="modal" aria-label="植物詳情">
+    <div class="modal-head">
+      <strong id="m-title">植物詳情</strong>
+      <button class="modal-close" onclick="modal.close()">×</button>
+    </div>
+    <div class="modal-body">
+      <div style="display:grid;grid-template-columns:90px 1fr;gap:16px">
+        <div class="thumb" id="m-thumb">No Image</div>
+        <div>
+          <div class="title" id="m-common"></div>
+          <div class="latin" id="m-latin"></div>
+          <div class="meta" id="m-meta"></div>
+          <p id="m-desc" style="margin:8px 0 0"></p>
+        </div>
+      </div>
+    </div>
+  </dialog>
+
+  <script src="./assets/site.js"></script>
+  <script>
+    const modal = document.getElementById('modal');
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
